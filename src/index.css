@@ -2,6 +2,73 @@
   color: #CEB916;
 }
 
+body {
+  background-color: #121212;
+  color: #f5f5f5;
+  font-family: 'Rubik', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #e50914;
+  text-shadow: 1px 1px 2px black;
+}
+
+p {
+  color: #f5f5f5;
+}
+
+.container {
+  background-color: #590207;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .img-rev {
   width: 300px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.img-rev:hover {
+  transform: scale(1.05);
+}
+
+.card {
+  background-color: #1e1e1e;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.btn-primary {
+  background-color: #e50914;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #b00610;
+}
+
+input,
+textarea {
+  background-color: #2c2c2c;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #e50914;
+  box-shadow: 0 0 0 0.2rem rgba(229, 9, 20, 0.25);
 }
