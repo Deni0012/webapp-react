@@ -13,7 +13,7 @@ export default function App() {
         <Route element={<DefaultLayout />}>
           <Route path="/" element={<div>homepage</div>} />
           <Route path="movies" element={<Movies />} />
-          <Route path="movies/:id" element={<div>movies</div>} />
+          <Route path="movies/:id" element={<div>movies id</div>} />
         </Route>
         <Route path="*" element={<div>404</div>} />
       </Routes>

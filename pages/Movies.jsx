@@ -7,7 +7,7 @@ export default function Movies() {
     const [movies, setMovies] = useState([]);
     const [search, setSearch] = useState('');
 
-    const endPoint = ('http://127.0.0.1:3000/movies');
+    const endPoint = ('http://127.0.0.1:3000/movies/');
 
     function getMovies() {
         axios.get(endPoint, {
