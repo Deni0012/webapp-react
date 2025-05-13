@@ -37,7 +37,7 @@ export default function Movies() {
             <form onSubmit={searchMovies} className="row g-1">
 
                 <div className="col-auto">
-                    <input type="text" className="form-control" id="inputPassword2" placeholder="Cerca film"
+                    <input type="text" className="form-control" id="inputPassword2" placeholder="Search movie"
                         value={search} onChange={(e) => setSearch(e.target.value)}
                     />
 
