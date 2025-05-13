@@ -18,7 +18,7 @@ export default function MovieCard({ movie }) {
     return <div className="card">
         <img src={imagepath} className="w-50 mx-auto" alt={title} />
         <div className="card-body g-3">
-            <h5 className="card-title">{title}</h5>
+            <h5>{title}</h5>
             <p>Director: <strong>{director}</strong></p>
             <p className="card-text">{abstract}</p>
             <p className="card-text">Average rating:{stars(avg_vote)}</p>
