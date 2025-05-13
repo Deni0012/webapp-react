@@ -52,7 +52,7 @@ export default function MovieReviews() {
         <form className="mt-3 mb-3">
             <div className="mb-3">
                 <label className="form-label">Add your name:</label>
-                <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                <input type="text" className="form-control" id="Name" aria-describedby="emailHelp" />
             </div>
             <div className="mb-3">
                 <label className="form-label">Leave a review!</label>
