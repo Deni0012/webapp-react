@@ -21,7 +21,7 @@ export default function MovieReviews() {
                 setMovies(res.data);
             })
             .catch((error) => {
-                console.error("Errore nel caricamento del film:", error);
+                console.error("Error loading movie:", error);
             });
     };
 
@@ -29,7 +29,7 @@ export default function MovieReviews() {
 
     function renderReviews() {
         if (!movies.reviews || movies.reviews.length === 0) {
-            return <p>Nessuna recensione disponibile.</p>;
+            return <p>No reviews available.</p>;
         }
 
         return movies.reviews.map(rev => (
@@ -49,17 +49,21 @@ export default function MovieReviews() {
         <h3 className="text-center mt-5 mb-5">Reviews</h3>
         <div>{renderReviews()}</div>
 
-        <form className="mt-3 mb-3" onSubmit={addReview}>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" className="form-label">Add your name:</label>
+        <form className="mt-3 mb-3">
+            <div className="mb-3">
+                <label className="form-label">Add your name:</label>
                 <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
             </div>
             <div className="mb-3">
-                <label for="exampleInputPassword1" className="form-label">Leave a review!</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <label className="form-label">Leave a review!</label>
+                <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <div className="d-flex justify-content-center">
+                <button type="submit" className="btn btn-primary p-2">Submit review!</button>
+            </div>
         </form>
+
+
 
     </div>
 };
