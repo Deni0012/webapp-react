@@ -17,7 +17,6 @@ export default function Movies() {
         })
             .then(res => {
                 setMovies(res.data);
-                console.log(res.data)
             })
             .catch(err => console.log(err))
     };

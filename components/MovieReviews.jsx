@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import StarRating from "./StarRating";
 import axios from "axios";
+import ReviewForm from "./ReviewForm";
 
 
 export default function MovieReviews() {
@@ -49,19 +50,9 @@ export default function MovieReviews() {
         <h3 className="text-center mt-5 mb-5">Reviews</h3>
         <div>{renderReviews()}</div>
 
-        <form className="mt-3 mb-3">
-            <div className="mb-3">
-                <label className="form-label">Add your name:</label>
-                <input type="text" className="form-control" id="Name" aria-describedby="emailHelp" />
-            </div>
-            <div className="mb-3">
-                <label className="form-label">Leave a review!</label>
-                <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            <div className="d-flex justify-content-center">
-                <button type="submit" className="btn btn-primary p-2">Submit review!</button>
-            </div>
-        </form>
+        <div>
+            <ReviewForm movieId={id} onSubmitSuccess={getMoviesId} />
+        </div>
 
 
 
