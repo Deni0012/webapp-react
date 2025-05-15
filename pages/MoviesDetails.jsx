@@ -20,16 +20,16 @@ const MoviesDetails = () => {
                     setLoading(false);
                 })
                 .catch(err => {
-                    setError('Film non trovato');
+                    setError('Movie not found');
                     setLoading(false);
-                    console.error('Errore durante il fetch del dettaglio film:', err);
+                    console.error('Error fetching movie detail:', err);
                 });
         };
 
         fetchMoviesDetails();
     }, [id]);
 
-    if (loading) return <div className="loading">Caricamento...</div>;
+    if (loading) return <div className="loading">Loading...</div>;
     if (error) return <div className="error-message">{error}</div>;
 
     return (
@@ -41,14 +41,14 @@ const MoviesDetails = () => {
                             movie={movie}
                             mode="detail"
                         />
-                        <Link to="/" className="back-link">Torna alla Home</Link>
+                        <Link to="/" className="back-link">Back to Home</Link>
                     </div>
                 )}
             </div>
 
             {movie && <MovieReviews reviews={movie.reviews} />}
 
-            {movie && <ReviewForm movieId={id} onReviewAdded={fetchMoviesDetails} />}
+            {movie && <ReviewForm movieId={id} onReviewAdded={MoviesDetails} />}
         </>
     );
 };
