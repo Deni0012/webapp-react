@@ -1,24 +1,30 @@
 import { useEffect, useState } from "react";
 import MovieCard from "../components/MovieCard";
 import axios from "axios";
+import { useContext } from "react";
+import { LoadContext } from "../contexts/LoadContext";
+import { NavLink } from "react-router-dom";
 
 export default function Movies() {
+
+    const { load, setLoad } = useContext(LoadContext);
 
     const [movies, setMovies] = useState([]);
     const [search, setSearch] = useState('');
 
-    const endPoint = ('http://127.0.0.1:3000/movies/');
+    const endPoint = ('http://127.0.0.1:3000/movies');
 
     function getMovies() {
+
+        setLoad(true);
         axios.get(endPoint, {
-            params: {
-                search
-            }
+            params: { search }
         })
             .then(res => {
                 setMovies(res.data);
             })
             .catch(err => console.log(err))
+            .finally(() => setLoad(false));
     };
 
     useEffect(getMovies, []);
@@ -26,10 +32,22 @@ export default function Movies() {
     function searchMovies(event) {
         event.preventDefault();
         getMovies();
-    }
+    };
+
+    if (load === true) {
+        return <div className="text-black">Loading...</div>
+    };
 
     return <div>
         <h1 className="text-center mb-3 mt-3">Movies</h1>
+
+        <div className="col-auto container d-flex justify-content-end">
+            <NavLink to="/movies/new">
+                <button className="btn btn-primary mb-3">Add new movies</button>
+
+            </NavLink>
+
+        </div>
         <section className="container">
             <h2 className="text-center">Best movies</h2>
 

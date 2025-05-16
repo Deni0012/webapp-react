@@ -37,7 +37,7 @@ const ReviewForm = ({ movieId, onReviewAdded }) => {
                 }
             })
             .catch((error) => {
-                console.error('Error sunmitting review:', error);
+                console.error('Error submitting review:', error);
             });
     };
 
